@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart To-Do</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Smart To-Do</h1>
+    <div class="controls">
+      <input id="taskText" placeholder="What do you want to do?" />
+      <input id="taskTime" type="datetime-local" />
+      <select id="priority">
+        <option value="normal">Normal</option>
+        <option value="high">High</option>
+        <option value="low">Low</option>
+      </select>
+      <button id="addBtn">Add</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Today's Tasks</h2>
+      <div id="taskContainer" class="taskContainer" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Edit modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h3>Edit Task</h3>
+      <input id="editText" />
+      <input id="editTime" type="datetime-local" />
+      <div class="modal-actions">
+        <button id="saveEdit">Save</button>
+        <button id="cancelEdit">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
